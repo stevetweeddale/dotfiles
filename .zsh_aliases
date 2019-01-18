@@ -1,0 +1,22 @@
+alias d=/opt/boxen/drush/drush8
+alias v='f -e nvim' # quick opening files with vim
+alias vim="nvim"
+alias vi="nvim"
+alias g=hub
+alias fix-package-lock="sed -i '' 's|http://|https://|g' package-lock.json"
+
+function prompt_drush_alias() {
+  f="${TMPDIR:-/tmp/}/drush-env-${USER}/drush-drupal-site-$$"
+  if [ -f $f ]
+  then
+    DRUPAL_SITE=$(cat "$f")
+  fi
+
+  if [[ -n "$DRUPAL_SITE" ]]; then
+    # local content=$(printf "${1:-%s}" "$DRUPAL_SITE")
+    # local content='testing'
+    "$1_prompt_segment" "$0" "$2" "magenta" "black" "$DRUPAL_SITE" "#"
+  fi
+}
+
+

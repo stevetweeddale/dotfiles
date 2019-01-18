@@ -1,0 +1,7 @@
+bind status C !<git commit
+
+# Commit amend
+bind generic = !<git commit --amend
+bind tree u !@git add %(directory)
+
+set vertical-split = horizontal
