@@ -39,6 +39,9 @@ export EDITOR='nvim'
 # Instantiate rbenv
 eval "$(rbenv init -)"
 
+# Instantiate nodenv
+eval "$(nodenv init -)"
+
 # Instantiate fasd
 eval "$(fasd --init auto)"
 
