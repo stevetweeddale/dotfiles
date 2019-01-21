@@ -11,23 +11,14 @@
     pager = true
 
 [alias]
-    ; st = status
     st = !tig status
     lg = !git log \"$@\" | tig
     co = checkout
     ci = commit
     ap = add -p
     up = "!git pull --rebase $1$2"
-    cim = "!git commit -c`git log -n1 --pretty=format:"%h" --author="Tweeddale"` --date=\"$(date)\""
+    pushp = "!git push -u origin $(git symbolic-ref --short HEAD)"
     permission-reset = '!git diff -p | grep -E "^(diff|old mode|new mode)" | sed -e "s/^old/NEW/;s/^new/old/;s/^NEW/new/" | git apply'
-    switch = !legit switch \"$@\"
-    branches = !legit branches
-    sprout = !legit sprout \"$@\"
-    unpublish = !legit unpublish \"$@\"
-    harvest = !legit harvest \"$@\"
-    sync = !legit sync \"$@\"
-    publish = !legit publish \"$@\"
-    graft = !legit graft \"$@\"
 
 [branch]
     autosetuprebase = always
@@ -38,24 +29,6 @@
 ; This enables singlekey responses in when doing stuff with -p
 [interactive]
     singlekey = true
-
-[core]
-    excludesfile = /opt/boxen/config/git/gitignore
-
-[merge]
-  tool = opendiff
-
-[url "ssh://git@git.drupal.org/project/"]
-    insteadOf = "dp:"
-[url "ssh://git@git.drupal.org/sandbox/"]
-    insteadOf = "ds:"
-[url "git@github.com:computerminds/"]
-    insteadOf = "cm:"
-[url "git@github.com:freshnetworks/"]
-    insteadOf = "fn:"
-
-[hub]
-    protocol = https
 
 [include]
     path = .gitconfig.local
