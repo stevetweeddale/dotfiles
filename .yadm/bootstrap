@@ -18,5 +18,8 @@ if [ "$system_type" = "Darwin" ]; then
   # Change the default shell to be zsh
   sudo sh -c "echo $(which zsh) >> /etc/shells"
   $ chsh -s $(which zsh)
+
+  # Enable key repeat on programming apps
+  defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 fi
 
