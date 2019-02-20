@@ -1,8 +1,8 @@
 robbyrussell/oh-my-zsh
 zsh-users/zsh-syntax-highlighting
-zsh-users/zsh-history-substring-search
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
+robbyrussell/oh-my-zsh path:plugins/history-substring-search
 robbyrussell/oh-my-zsh path:plugins/extract
 robbyrussell/oh-my-zsh path:plugins/fasd
 robbyrussell/oh-my-zsh path:plugins/gitignore
