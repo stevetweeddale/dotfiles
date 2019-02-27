@@ -52,3 +52,7 @@ THEFUCK_REQUIRE_CONFIRMATION=false
 # Grab aliases
 source $HOME/.zsh_aliases
 
+# Add composer stuff into $PATH
+export PATH="$PATH:$HOME/.composer/vendor/bin"
+# Add homebrews sbin into $PATH
+export PATH="/usr/local/sbin:$PATH"
