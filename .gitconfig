@@ -19,6 +19,10 @@
     up = "!git pull --rebase $1$2"
     pushp = "!git push -u origin $(git symbolic-ref --short HEAD)"
     permission-reset = '!git diff -p | grep -E "^(diff|old mode|new mode)" | sed -e "s/^old/NEW/;s/^new/old/;s/^NEW/new/" | git apply'
+    hide = update-index --skip-worktree
+    unhide = update-index --no-skip-worktree
+    hidden = "! git ls-files -v | grep '^S' | cut -c3-"
+    root-clean = "!git clean "
 
 [branch]
     autosetuprebase = always

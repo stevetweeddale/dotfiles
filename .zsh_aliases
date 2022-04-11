@@ -1,9 +1,11 @@
-alias d=/opt/boxen/drush/drush8
+alias d=drush
 alias v='f -e nvim' # quick opening files with vim
 alias vim="nvim"
 alias vi="nvim"
 alias g=hub
 alias fix-package-lock="sed -i '' 's|http://|https://|g' package-lock.json"
+alias cat=bat
+alias ll='exa -la'
 
 function prompt_drush_alias() {
   f="${TMPDIR:-/tmp/}/drush-env-${USER}/drush-drupal-site-$$"

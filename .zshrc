@@ -1,12 +1,13 @@
 export ZSH="$(antibody home)"/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
+DISABLE_MAGIC_FUNCTIONS=true
 ZSH_THEME=
 
 # Configure some of the stuff we're about to load
 POWERLEVEL9K_MODE='nerdfont-complete'
 DEFAULT_USER=$USER
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir drush_alias vcs status)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_VCS_GIT_ICON=''
@@ -36,11 +37,18 @@ TIMEFMT="${fg_bold[yellow]}'%J' took %*E$reset_color"
 # Use vim
 export EDITOR='nvim'
 
+# Add homebrews sbin into $PATH
+export PATH="/usr/local/sbin:$PATH"
+
+# Add composer stuff into $PATH
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+
 # Instantiate rbenv
 eval "$(rbenv init -)"
 
 # Instantiate nodenv
 eval "$(nodenv init -)"
+#
 
 # Instantiate fasd
 eval "$(fasd --init auto)"
