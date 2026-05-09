@@ -7,7 +7,12 @@ if [ "$system_type" = "Darwin" ]; then
   # install homebrew if it's missing
   if ! command -v brew >/dev/null 2>&1; then
     echo "Installing homebrew"
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
+
+  # Make brew available on Apple Silicon for the rest of this script
+  if [ -x /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
 
   if [ -f "$HOME/.Brewfile" ]; then
@@ -15,11 +20,23 @@ if [ "$system_type" = "Darwin" ]; then
     brew bundle --global
   fi
 
+  if [ -d "$HOME/.iterm2" ]; then
+    echo "Setting iTerm preference folder"
+    defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.iterm2"
+  fi
+
   # Change the default shell to be zsh
   sudo sh -c "echo $(which zsh) >> /etc/shells"
-  $ chsh -s $(which zsh)
+  chsh -s $(which zsh)
+
+  antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+
+  # Install language runtimes from ~/.config/mise/config.toml
+  if command -v mise >/dev/null 2>&1; then
+    echo "Installing mise tools"
+    mise install
+  fi
 
   # Enable key repeat on programming apps
   defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 fi
-
