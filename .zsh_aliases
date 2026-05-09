@@ -1,23 +1,31 @@
-alias d=drush
+alias alg=algolia
 alias v='f -e nvim' # quick opening files with vim
 alias vim="nvim"
 alias vi="nvim"
-alias g=hub
+alias g=git
 alias fix-package-lock="sed -i '' 's|http://|https://|g' package-lock.json"
 alias cat=bat
-alias ll='exa -la'
+alias ll='eza -la'
+alias http='noglob http'
+alias urldecode='python -c "import sys, urllib.parse; print(urllib.parse.unquote(sys.argv[1] if len(sys.argv) > 1 else sys.stdin.read().strip()))"'
 
-function prompt_drush_alias() {
-  f="${TMPDIR:-/tmp/}/drush-env-${USER}/drush-drupal-site-$$"
-  if [ -f $f ]
-  then
-    DRUPAL_SITE=$(cat "$f")
-  fi
+tree() {
+  local arg has_level=0
 
-  if [[ -n "$DRUPAL_SITE" ]]; then
-    # local content=$(printf "${1:-%s}" "$DRUPAL_SITE")
-    # local content='testing'
-    "$1_prompt_segment" "$0" "$2" "magenta" "black" "$DRUPAL_SITE" "#"
+  for arg in "$@"; do
+    [[ "$arg" == -- ]] && break
+    case "$arg" in
+      -L|--level|--level=*|-L[0-9]*)
+        has_level=1
+        break
+        ;;
+    esac
+  done
+
+  if (( has_level )); then
+    command eza -T "$@"
+  else
+    command eza -T -L 2 "$@"
   fi
 }
 

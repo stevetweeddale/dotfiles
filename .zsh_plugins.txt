@@ -2,11 +2,12 @@ robbyrussell/oh-my-zsh
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
-robbyrussell/oh-my-zsh path:plugins/history-substring-search
-robbyrussell/oh-my-zsh path:plugins/extract
-robbyrussell/oh-my-zsh path:plugins/fasd
-robbyrussell/oh-my-zsh path:plugins/gitignore
-robbyrussell/oh-my-zsh path:plugins/osx
-robbyrussell/oh-my-zsh path:plugins/bgnotify
-robbyrussell/oh-my-zsh path:plugins/vi-mode
-bhilburn/powerlevel9k
+# jeffreytse/zsh-vi-mode
+ohmyzsh/ohmyzsh path:plugins/vi-mode
+ohmyzsh/ohmyzsh path:plugins/history-substring-search
+ohmyzsh/ohmyzsh path:plugins/extract
+ohmyzsh/ohmyzsh path:plugins/fasd
+ohmyzsh/ohmyzsh path:plugins/gitignore
+ohmyzsh/ohmyzsh path:plugins/macos
+# ohmyzsh/ohmyzsh path:plugins/bgnotify
+romkatv/powerlevel10k
