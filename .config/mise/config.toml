@@ -1,0 +1,11 @@
+[tools]
+java = "temurin-20.0.0+36"
+node = "latest"
+ruby = "3.2.2"
+python = "3.13"
+uv = "latest"
+flutter = "2"
+vault = "latest"
+
+[settings]
+idiomatic_version_file_enable_tools = ["node"]

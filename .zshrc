@@ -24,8 +24,14 @@ POWERLEVEL9K_STATUS_OK_FOREGROUND="black"
 POWERLEVEL9K_STATUS_ERROR_BACKGROUND="red"
 POWERLEVEL9K_STATUS_ERROR_FOREGROUND="black"
 
+# Configure bat theme
+export BAT_THEME="Monokai Extended"
+
 # Ignore dupes in history substring search
 setopt HIST_IGNORE_ALL_DUPS
+
+# Set up homebrew completion
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 source ~/.zsh_plugins.sh
 
@@ -40,15 +46,14 @@ export EDITOR='nvim'
 # Add homebrews sbin into $PATH
 export PATH="/usr/local/sbin:$PATH"
 
-# Add composer stuff into $PATH
-export PATH="$HOME/.composer/vendor/bin:$PATH"
+# Add custom bin directory
+export PATH="$HOME/bin:$PATH"
 
-# Instantiate rbenv
-eval "$(rbenv init -)"
+# Instantiate asdf
+# . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
-# Instantiate nodenv
-eval "$(nodenv init -)"
-#
+# Activate mise-en-place
+eval "$(mise activate zsh)"
 
 # Instantiate fasd
 eval "$(fasd --init auto)"
@@ -60,7 +65,22 @@ THEFUCK_REQUIRE_CONFIRMATION=false
 # Grab aliases
 source $HOME/.zsh_aliases
 
-# Add composer stuff into $PATH
-export PATH="$PATH:$HOME/.composer/vendor/bin"
-# Add homebrews sbin into $PATH
-export PATH="/usr/local/sbin:$PATH"
+export FX_LANG=node
+export NODE_PATH=`npm root -g`
+source ~/.config/op/plugins.sh
+
+export PATH="$HOME/.local/bin:$PATH"
+
+setenv() {
+  if [ -z "$1" ]; then
+    echo "Usage: setenv VAR_NAME"
+    return 1
+  fi
+
+  local var="$1"
+  local value
+
+  read -s "?Enter value for $var: " value
+  echo
+  export "$var=$value"
+}
