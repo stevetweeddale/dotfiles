@@ -58,9 +58,6 @@ export PATH="$HOME/bin:$PATH"
 # Activate mise-en-place
 eval "$(mise activate zsh)"
 
-# Instantiate fasd
-eval "$(fasd --init auto)"
-
 # Instantiate corrections
 eval "$(thefuck --alias gah)"
 THEFUCK_REQUIRE_CONFIRMATION=false

@@ -16,8 +16,6 @@ brew "coreutils"
 brew "dasel"
 # Modern, maintained replacement for ls
 brew "eza"
-# CLI tool for quick access to files and directories
-brew "fasd"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Play, record, convert, and stream select audio and video codecs
