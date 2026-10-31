@@ -6,6 +6,7 @@ python = "3.13"
 uv = "latest"
 flutter = "2"
 vault = "latest"
+poetry = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node"]
