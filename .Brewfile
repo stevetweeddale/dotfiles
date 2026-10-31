@@ -2,11 +2,12 @@ tap "algolia/algolia-cli", trusted: true
 tap "algolia/rtk"
 tap "algolia/solutions-team", "git@github.com:algolia/homebrew-solutions-team.git", trusted: true
 tap "coursier/formulas"
-tap "getantibody/tap"
 tap "homebrew/bundle"
 tap "sj14/tap"
 # Browser automation CLI for AI agents
 brew "agent-browser"
+# Plugin manager for zsh, inspired by antigen and antibody
+brew "antidote"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # GNU File, Shell, and Text utilities

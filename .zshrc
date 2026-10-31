@@ -1,4 +1,3 @@
-export ZSH="$(antibody home)"/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
 DISABLE_MAGIC_FUNCTIONS=true
 ZSH_THEME=
@@ -33,7 +32,11 @@ setopt HIST_IGNORE_ALL_DUPS
 # Set up homebrew completion
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
-source ~/.zsh_plugins.sh
+# Load plugins with antidote (builds ~/.zsh_plugins.zsh from ~/.zsh_plugins.txt)
+source "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
+antidote load
+
+autoload -Uz compinit && compinit
 
 # Show output from time for anything that takes longer than this
 REPORTTIME=3

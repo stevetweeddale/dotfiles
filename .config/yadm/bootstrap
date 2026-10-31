@@ -29,8 +29,6 @@ if [ "$system_type" = "Darwin" ]; then
   sudo sh -c "echo $(which zsh) >> /etc/shells"
   chsh -s $(which zsh)
 
-  antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
-
   # Install language runtimes from ~/.config/mise/config.toml
   if command -v mise >/dev/null 2>&1; then
     echo "Installing mise tools"
