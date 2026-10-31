@@ -1,9 +1,6 @@
 tap "algolia/algolia-cli", trusted: true
-tap "algolia/rtk"
 tap "algolia/solutions-team", "git@github.com:algolia/homebrew-solutions-team.git", trusted: true
-tap "coursier/formulas"
-tap "homebrew/bundle"
-tap "sj14/tap"
+tap "sj14/tap", trusted: true
 # Browser automation CLI for AI agents
 brew "agent-browser"
 # Plugin manager for zsh, inspired by antigen and antibody
