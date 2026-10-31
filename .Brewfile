@@ -59,8 +59,8 @@ brew "terminal-notifier"
 brew "thefuck"
 # Text interface for Git repositories
 brew "tig"
-# Simplified and community-driven man pages
-brew "tldr"
+# Official tldr client written in Rust
+brew "tlrc"
 # Yet Another Dotfiles Manager
 brew "yadm"
 # UNIX shell (command interpreter)
