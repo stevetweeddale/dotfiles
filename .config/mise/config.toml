@@ -4,7 +4,6 @@ node = "latest"
 ruby = "3.2.2"
 python = "3.13"
 uv = "latest"
-flutter = "2"
 vault = "latest"
 poetry = "latest"
 
