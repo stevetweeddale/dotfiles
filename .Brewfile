@@ -1,8 +1,8 @@
-tap "algolia/algolia-cli"
-tap "algolia/solutions-team"
+tap "algolia/algolia-cli", trusted: true
+tap "algolia/rtk"
+tap "algolia/solutions-team", "git@github.com:algolia/homebrew-solutions-team.git", trusted: true
 tap "coursier/formulas"
 tap "getantibody/tap"
-tap "go-task/tap"
 tap "homebrew/bundle"
 tap "sj14/tap"
 # Browser automation CLI for AI agents
@@ -17,6 +17,8 @@ brew "dasel"
 brew "eza"
 # CLI tool for quick access to files and directories
 brew "fasd"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # Terminal JSON viewer
@@ -31,6 +33,8 @@ brew "gifsicle"
 brew "git"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# A fast, cross-platform build tool inspired by Make, designed for modern workflows.
+brew "go-task"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # Tools and libraries to manipulate images in select formats
@@ -47,6 +51,10 @@ brew "neovim"
 brew "ollama"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# CLI proxy to minimize LLM token consumption
+brew "rtk"
 # Command-line interface for running and interacting with Temporal Server and UI
 brew "temporal"
 # Send macOS User Notifications from the command-line
@@ -69,8 +77,6 @@ brew "algolia/algolia-cli/algolia"
 brew "algolia/solutions-team/cnf"
 # Bash script to move AI configuration between Algolia indices
 brew "algolia/solutions-team/copy-ai-config"
-# A fast, cross-platform build tool inspired by Make, designed for modern workflows.
-brew "go-task/tap/go-task"
 # Easily convert epoch timestamps to human readable formats and vice versa.
 brew "sj14/tap/epoch"
 # Command-line interface for 1Password
@@ -118,6 +124,7 @@ vscode "dart-code.flutter"
 vscode "dsznajder.es7-react-js-snippets"
 vscode "eamodio.gitlens"
 vscode "ericadamski.carbon-now-sh"
+vscode "golang.go"
 vscode "huibizhang.codesnap-plus"
 vscode "masko.masko-terminal-focus"
 vscode "mechatroner.rainbow-csv"
@@ -134,6 +141,7 @@ vscode "ms-vscode-remote.remote-ssh-edit"
 vscode "ms-vscode.remote-explorer"
 vscode "ms-vscode.vscode-typescript-next"
 vscode "openai.chatgpt"
+vscode "openai.codex-audio"
 vscode "reditorsupport.r"
 vscode "reditorsupport.r-syntax"
 vscode "ritwickdey.liveserver"
